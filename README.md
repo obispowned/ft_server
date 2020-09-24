@@ -12,12 +12,15 @@ Es la ruta donde estarán los enlaces simbolicos de los archivos creados en site
     /var/www/html
 Aqui alojaremos las webs, los índex.html, index.php y los directorios de configuración (con permisos) de Wordpress y PHP que previamente descargaremos desde:
 
-- PHP:  RUN wget https://files.phpmyadmin.net/phpMyAdmin/4.9.0.1/phpMyAdmin-4.9.0.1-all-languages.tar.gz
-        RUN tar xvf phpMyAdmin-4.9.0.1-all-languages.tar.gz
-        RUN mv /tmp/config.inc.php /var/www/html/phpmyadmin/
-- WORDPRESS:      RUN wget -c https://wordpress.org/latest.tar.gz
-                    RUN tar xvzf latest.tar.gz
-                    RUN mv /tmp/wp-config.php /var/www/html/wordpress/
+   - PHP:
+RUN wget https://files.phpmyadmin.net/phpMyAdmin/4.9.0.1/phpMyAdmin-4.9.0.1-all-languages.tar.gz
+RUN tar xvf phpMyAdmin-4.9.0.1-all-languages.tar.gz
+RUN mv /tmp/config.inc.php /var/www/html/phpmyadmin/
+
+   - WORDPRESS:
+RUN wget -c https://wordpress.org/latest.tar.gz
+RUN tar xvzf latest.tar.gz
+RUN mv /tmp/wp-config.php /var/www/html/wordpress/
 
 
 Exponemos puertos 80 y 443 para http y https respectivamente.

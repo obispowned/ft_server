@@ -16,8 +16,8 @@ Aqui alojaremos las webs, los índex.html, index.php y los directorios de config
         RUN tar xvf phpMyAdmin-4.9.0.1-all-languages.tar.gz
         RUN mv /tmp/config.inc.php /var/www/html/phpmyadmin/
 - WORDPRESS:      RUN wget -c https://wordpress.org/latest.tar.gz
-                                    RUN tar xvzf latest.tar.gz
-                                    RUN mv /tmp/wp-config.php /var/www/html/wordpress/
+                    RUN tar xvzf latest.tar.gz
+                    RUN mv /tmp/wp-config.php /var/www/html/wordpress/
 
 
 Exponemos puertos 80 y 443 para http y https respectivamente.

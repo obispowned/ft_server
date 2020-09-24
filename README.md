@@ -25,4 +25,4 @@ RUN mv /tmp/wp-config.php /var/www/html/wordpress/
 
 Exponemos puertos 80 y 443 para http y https respectivamente.
 
-Ejecutamos un bash para crear la BBDD SQL
+Ejecutamos un bash para crear la BBDD SQL.

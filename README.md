@@ -1,13 +1,13 @@
 # ft_server
 ft_server Project 42Madrid
 
-/etc/nginx/sites-available
+    /etc/nginx/sites-available
 Es la ruta de la configuracion de los sitios que alojaremos en el servidor, desvío de puertos etc...
 
-/etc/nginx/sites-enable
+    /etc/nginx/sites-enable
 Es la ruta donde estarán los enlaces simbolicos de los archivos creados en sites-available, si queremos desactivar alguno solo hay que borrar el enlace simbólico creado en esta carpeta, de esta manera lo deshabitamos sin tener que borrarlo en la carpeta sites-available.
 
-/var/www/html
+    /var/www/html
 Aqui alojaremos las webs, los índex.html, index.php y los directorios de configuración (con permisos) de Wordpress y PHP que previamente descargaremos desde:
     - PHP: RUN wget https://files.phpmyadmin.net/phpMyAdmin/4.9.0.1/phpMyAdmin-4.9.0.1-all-languages.tar.gz
                 RUN tar xvf phpMyAdmin-4.9.0.1-all-languages.tar.gz

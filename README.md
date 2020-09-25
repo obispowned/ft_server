@@ -27,3 +27,10 @@ RUN mv /tmp/wp-config.php /var/www/html/wordpress/
 Exponemos puertos 80 y 443 para http y https respectivamente.
 
 Ejecutamos un bash para crear la BBDD SQL.
+
+----------------------------------------------------------------------------------
+#Nos situamos en el directorio donde tengamos nuestro dockerfile
+    docker build -t img_cont .
+Esto crea la imagen previa a nuestro contenedor
+    docker run -it -p 80:80 -p 443:443 img_cont
+    

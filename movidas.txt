@@ -1,0 +1,7 @@
+/var/www/html  aqui esta el index por defecto de nginx
+/var/www/miweb  aquí esta el índex creado por mi
+
+sites-available/  aqui esta el archivo default que rediríje al /var/www/html
+sites-available/  aqui esta el archive my default que redirije al /var/www/miweb
+
+

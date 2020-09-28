@@ -55,9 +55,9 @@ RUN mv /tmp/wp-config.php /var/www/html/wordpress/
 	#phpmyadmin
 RUN wget https://files.phpmyadmin.net/phpMyAdmin/5.0.2/phpMyAdmin-5.0.2-all-languages.zip && unzip *.zip && mv phpMyAdmin-5.0.2-all-languages /var/www/html/
 RUN rm *.zip
-RUN mv /tmp/config.inc.php /var/www/html/phpMyAdmin-5.0.2-all-languages/
-RUN chmod 777 -R /var/www/html/phpMyAdmin-5.0.2-all-languages && chown -R www-data:www-data /var/www/html/phpMyAdmin-5.0.2-all-languages
-
+RUN mv /var/www/html/phpMyAdmin-5.0.2-all-languages /var/www/html/phpmyadmin
+RUN mv /tmp/config.inc.php /var/www/html/phpmyadmin/
+RUN chmod 777 -R /var/www/html/phpmyadmin && chown -R www-data:www-data /var/www/html/phpmyadmin
 
 
 EXPOSE 80 443

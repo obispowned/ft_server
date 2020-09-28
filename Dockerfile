@@ -57,7 +57,7 @@ RUN wget https://files.phpmyadmin.net/phpMyAdmin/5.0.2/phpMyAdmin-5.0.2-all-lang
 RUN rm *.zip
 RUN mv /var/www/html/phpMyAdmin-5.0.2-all-languages /var/www/html/phpmyadmin
 RUN mv /tmp/config.inc.php /var/www/html/phpmyadmin/
-RUN chmod 777 -R /var/www/html/phpmyadmin && chown -R www-data:www-data /var/www/html/phpmyadmin
+RUN chmod 660 -R /var/www/html/phpmyadmin && chown -R www-data:www-data /var/www/html/phpmyadmin
 
 
 EXPOSE 80 443

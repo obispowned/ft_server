@@ -11,8 +11,6 @@ COPY srcs/myconf.nginx.conf ./
 COPY srcs/runbbdd.sh ./
 
 
-RUN mkdir /turnoff	
-
 	#Actualizacion e instalacion de utilidades
 RUN apt-get update
 RUN apt-get upgrade -y
@@ -31,7 +29,7 @@ RUN mv /tmp/myconf.nginx.conf /etc/nginx/sites-available/
 RUN ln -s /etc/nginx/sites-available/myconf.nginx.conf /etc/nginx/sites-enabled/
 RUN rm /var/www/html/*.html
 COPY /srcs/info.php /var/www/html/
-COPY /srcs/home.html /var/www/html/
+COPY /srcs/index.html /var/www/html/
 
 
 	#instalacion de protocoloSSL, permiso y acceso
@@ -58,6 +56,9 @@ RUN rm *.zip
 RUN mv /var/www/html/phpMyAdmin-5.0.2-all-languages /var/www/html/phpmyadmin
 RUN mv /tmp/config.inc.php /var/www/html/phpmyadmin/
 RUN chmod 775 -R /var/www/html/phpmyadmin && chown -R www-data:www-data /var/www/html/phpmyadmin
+
+RUN mkdir /var/www/html/test_autoindex
+RUN mkdir /var/www/html/test_autoindex/carpeta
 
 EXPOSE 80 443
 

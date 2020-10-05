@@ -8,12 +8,15 @@ WORKDIR /tmp
 COPY srcs/config.inc.php ./
 COPY srcs/wp-config.php ./
 COPY srcs/myconf.nginx.conf ./
+COPY srcs/myconf.off.nginx.conf ./
+COPY srcs/autoindex_OFF.sh ./
+COPY srcs/autoindex_ON.sh ./
 COPY srcs/runbbdd.sh ./
+RUN mkdir /turnoff
 
 
 	#Actualizacion e instalacion de utilidades
-RUN apt-get update
-RUN apt-get upgrade -y
+RUN apt-get update && apt-get upgrade -y
 RUN apt-get install apt-utils -y
 RUN apt-get install -y wget
 RUN apt-get install -y unzip zip
@@ -26,6 +29,7 @@ RUN apt-get install -y php7.3 php7.3-fpm php7.3-mysql php7.3-curl php7.3-mbstrin
 RUN apt-get install -y nginx
 RUN rm /etc/nginx/sites-enabled/default
 RUN mv /tmp/myconf.nginx.conf /etc/nginx/sites-available/
+RUN mv /tmp/myconf.off.nginx.conf /etc/nginx/sites-available/
 RUN ln -s /etc/nginx/sites-available/myconf.nginx.conf /etc/nginx/sites-enabled/
 RUN rm /var/www/html/*.html
 COPY /srcs/info.php /var/www/html/
@@ -57,8 +61,6 @@ RUN mv /var/www/html/phpMyAdmin-5.0.2-all-languages /var/www/html/phpmyadmin
 RUN mv /tmp/config.inc.php /var/www/html/phpmyadmin/
 RUN chmod 775 -R /var/www/html/phpmyadmin && chown -R www-data:www-data /var/www/html/phpmyadmin
 
-RUN mkdir /var/www/html/test_autoindex
-RUN mkdir /var/www/html/test_autoindex/carpeta
 
 EXPOSE 80 443
 

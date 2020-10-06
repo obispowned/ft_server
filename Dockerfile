@@ -12,6 +12,7 @@ COPY srcs/myconf.off.nginx.conf ./
 COPY srcs/autoindex_OFF.sh ./
 COPY srcs/autoindex_ON.sh ./
 COPY srcs/runbbdd.sh ./
+COPY /srcs/index.html ./
 RUN mkdir /turnoff
 
 
@@ -33,7 +34,6 @@ RUN mv /tmp/myconf.off.nginx.conf /etc/nginx/sites-available/
 RUN ln -s /etc/nginx/sites-available/myconf.nginx.conf /etc/nginx/sites-enabled/
 RUN rm /var/www/html/*.html
 COPY /srcs/info.php /var/www/html/
-COPY /srcs/index.html /var/www/html/
 
 
 	#instalacion de protocoloSSL, permiso y acceso
